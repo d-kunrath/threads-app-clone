@@ -1,8 +1,8 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import User from "../models/user";
-import Thread from "../models/thread";
+import User from "../models/user.model";
+import Thread from "../models/thread.model";
 import { connectToDB } from "../mongoose";
 import { FilterQuery, SortOrder, Types, isValidObjectId } from "mongoose";
 
