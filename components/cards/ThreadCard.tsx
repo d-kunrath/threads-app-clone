@@ -135,6 +135,9 @@ function ThreadCard({
         </div>
       )}
 
+      {/* @TODO Delete thread */}
+      {/* @TODO Show comment logos */}
+
       {!isComment && community && (
         <Link
           href={`/communities/${community.id}`}

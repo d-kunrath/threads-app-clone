@@ -46,7 +46,6 @@ function PostThread({ userId }: { userId: string }) {
   })
 
   const onSubmit = async (values: z.infer<typeof ThreadValidation>) => {
-    console.log('ORG >>>', organization);
     await createThread({
       text: values.thread,
       author: userId,
@@ -54,7 +53,7 @@ function PostThread({ userId }: { userId: string }) {
       path: pathname,
     });
 
-    // router.push('/');
+    router.push('/');
   }
 
   return (
