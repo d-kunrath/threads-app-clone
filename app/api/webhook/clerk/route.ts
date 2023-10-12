@@ -9,7 +9,7 @@ import { headers } from "next/headers";
 
 import { IncomingHttpHeaders } from "http";
 
-import { NextResponse, NextRequest } from "next/server";
+import { NextResponse } from "next/server";
 import {
   addMemberToCommunity,
   createCommunity,
@@ -34,7 +34,9 @@ type Event = {
   type: EventType;
 };
 
-export const POST = async (request: NextRequest) => {
+type TPost = (request: Request) => Promise<NextResponse<{ message: unknown; }> | undefined>;
+
+export const POST: TPost = async (request: Request) => {
   const payload = await request.json();
   const header = headers();
 
