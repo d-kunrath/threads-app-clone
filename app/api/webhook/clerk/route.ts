@@ -34,9 +34,7 @@ type Event = {
   type: EventType;
 };
 
-type TPost = (request: Request) => Promise<NextResponse<{ message: unknown; }> | undefined>;
-
-export const POST: TPost = async (request: Request) => {
+export const POST = async (request: Request) => {
   const payload = await request.json();
   const header = headers();
 
