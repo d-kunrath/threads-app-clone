@@ -39,7 +39,7 @@ export async function fetchThreads(pageNumber = 1, pageSize = 20) {
     const skipAmount = (pageNumber - 1) * pageSize;
 
     const threadsQuery = Thread
-      .find({ parentsId: { $in: [null, undefined] } })
+      .find({ parentId: { $in: [null, undefined] } })
       .sort({ createdAt: "desc" })
       .skip(skipAmount)
       .limit(pageSize)
